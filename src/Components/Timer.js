@@ -3,14 +3,12 @@ import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import './Timer.css';
 
-const Timer = () => {
+const Timer = ({ wakeUpTime = 6, sleepTime = 22 }) => {
     const [date, setDate] = useState(new Date());
-    const wakeUpTime = 6; // 6 AM
-    const endTime = 22; // 10 PM
     const calculateTimePassed = () => {
         const now = new Date();
         const startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), wakeUpTime, 0, 0);
-        const endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), endTime, 0, 0);
+        const endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), sleepTime, 0, 0);
 
         const totalDayTime = endOfDay - startOfDay;
         const currentTimePassed = now - startOfDay;
@@ -40,7 +38,7 @@ const Timer = () => {
     }, []);
 
     return (
-        <div style={{ width: '200px', height: '200px' }}>
+        <div className='clock'>
             <CircularProgressbar
                 value={percentageOfDayPassed}
                 text={`${Math.round(percentageOfDayPassed)}%`}

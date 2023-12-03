@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/day-countdown-timer/static/css/main.14c8137e.css",
-    "main.js": "/day-countdown-timer/static/js/main.dafa8897.js",
+    "main.css": "/day-countdown-timer/static/css/main.2f217903.css",
+    "main.js": "/day-countdown-timer/static/js/main.73eaceff.js",
     "static/js/787.6ba9ddfb.chunk.js": "/day-countdown-timer/static/js/787.6ba9ddfb.chunk.js",
     "index.html": "/day-countdown-timer/index.html",
-    "main.14c8137e.css.map": "/day-countdown-timer/static/css/main.14c8137e.css.map",
-    "main.dafa8897.js.map": "/day-countdown-timer/static/js/main.dafa8897.js.map",
+    "main.2f217903.css.map": "/day-countdown-timer/static/css/main.2f217903.css.map",
+    "main.73eaceff.js.map": "/day-countdown-timer/static/js/main.73eaceff.js.map",
     "787.6ba9ddfb.chunk.js.map": "/day-countdown-timer/static/js/787.6ba9ddfb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.14c8137e.css",
-    "static/js/main.dafa8897.js"
+    "static/css/main.2f217903.css",
+    "static/js/main.73eaceff.js"
   ]
 }

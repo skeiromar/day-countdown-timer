@@ -13,7 +13,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Adjust the height as needed */
+    margin-top: 10px;
 }
 .custom-countdown-timer {
     position: relative;

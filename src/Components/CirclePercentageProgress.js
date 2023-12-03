@@ -3,13 +3,15 @@ import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import './Timer.css';
 
-const Timer = ({ wakeUpTime = 6, sleepTime = 22 }) => {
+const CirclePercentageProgress = ({ wakeUpTime = 6, sleepTime = 22 }) => {
     const [date, setDate] = useState(new Date());
     const calculateTimePassed = () => {
         const now = new Date();
         const startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), wakeUpTime, 0, 0);
         const endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), sleepTime, 0, 0);
-
+        if (sleepTime < wakeUpTime) {
+            endOfDay.setDate(endOfDay.getDate() + 1);
+        }
         const totalDayTime = endOfDay - startOfDay;
         const currentTimePassed = now - startOfDay;
 
@@ -22,7 +24,7 @@ const Timer = ({ wakeUpTime = 6, sleepTime = 22 }) => {
     const percentageOfDayPassed = calculateTimePassed(new Date()) * 100;
     const progressBarStyle = {
         // Customize the color and other styles as needed
-        pathColor: `rgba(62, 152, 199, ${percentageOfDayPassed / 100})`,
+        pathColor: `rgba(62, 192, 199, ${percentageOfDayPassed / 100})`,
         textColor: '#f88',
         trailColor: '#d6d6d6',
         backgroundColor: '#3e98c7',
@@ -49,4 +51,4 @@ const Timer = ({ wakeUpTime = 6, sleepTime = 22 }) => {
 };
 
 
-export default Timer;
+export default CirclePercentageProgress;

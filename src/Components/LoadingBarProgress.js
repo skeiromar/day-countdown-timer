@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import './TimeGradientBar.css'; // Make sure to create this CSS file
+import './LoadingBarProgress.css'; // Make sure to create this CSS file
 
-const TimeGradientBar = ({ wakeUpTime, sleepTime }) => {
+const LoadingBarProgress = ({ wakeUpTime, sleepTime }) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -9,6 +9,9 @@ const TimeGradientBar = ({ wakeUpTime, sleepTime }) => {
       const now = new Date();
       const startTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), wakeUpTime);
       const endTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), sleepTime);
+      if (sleepTime < wakeUpTime) {
+        endTime.setDate(endTime.getDate() + 1);
+    }
       const totalTime = endTime - startTime;
       const timePassed = now - startTime;
       const progressPercentage = (timePassed / totalTime) * 100;
@@ -29,4 +32,4 @@ const TimeGradientBar = ({ wakeUpTime, sleepTime }) => {
   );
 };
 
-export default TimeGradientBar;
+export default LoadingBarProgress;

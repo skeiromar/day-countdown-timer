@@ -5,6 +5,9 @@ const calculateTimeFraction = (wakeUpTime= 6, sleepTime=22) => {
   const now = new Date();
   const startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), wakeUpTime);
   const endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), sleepTime);
+  if (sleepTime < wakeUpTime) {
+    endOfDay.setDate(endOfDay.getDate() + 1);
+  }
   const totalSeconds = (endOfDay - startOfDay) / 1000;
   const secondsPassed = (now - startOfDay) / 1000;
   const fraction = secondsPassed < 0 ? 0 : secondsPassed > totalSeconds ? 1 : secondsPassed / totalSeconds;
@@ -17,7 +20,7 @@ const formatTime = (totalSeconds) => {
     return `${hours}:${minutes.toString().padStart(2, '0')}`;
   };
 
-const DayProgress = ({ wakeUpTime = 6, sleepTime = 22 }) => {
+const CircleTimerProgress = ({ wakeUpTime = 6, sleepTime = 22 }) => {
   const [timeLeft, setTimeLeft] = useState(formatTime(wakeUpTime, sleepTime));
   const [timePassed, setTimePassed] = useState('');
   const [pathLength, setPathLength] = useState(calculateTimeFraction(wakeUpTime, sleepTime));
@@ -69,10 +72,10 @@ const DayProgress = ({ wakeUpTime = 6, sleepTime = 22 }) => {
                 ></circle>
             </g>
         </svg>
-        <div className="label">{timeLeft} hours left</div>
+        {/* <div className="label">{timeLeft} hours left</div> */}
         <div className="label-time-passed">{timePassed} hours passed</div>
     </div>
   );
 };
 
-export default DayProgress;
+export default CircleTimerProgress;

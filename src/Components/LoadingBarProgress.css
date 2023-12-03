@@ -1,5 +1,5 @@
 .time-gradient-bar-outer {
-    width: 485px;
+    width: 25rem;
     height: 20px; /* Height of the bar */
     background-color: #e0e0e0; /* Background color for the unfilled part */
     border-radius: 10px; /* Optional: rounded corners */

@@ -3,6 +3,7 @@ import './App.css';
 import Timer from './Components/Timer';
 import CircleTimer from './Components/CircleTimer';
 import DayProgress from './Components/DayProgress';
+import TimeGradientBar from './Components/TimeGradientBar';
 
 function App() {
   const [wakeUpTime, setWakeUpTime] = useState(localStorage.getItem('wakeUpTime') || 6); // Default to 6 AM
@@ -55,6 +56,7 @@ function App() {
         <Timer wakeUpTime={wakeUpTime} sleepTime={sleepTime} />
         <DayProgress wakeUpTime={wakeUpTime} sleepTime={sleepTime} />
       </div>
+        <TimeGradientBar wakeUpTime={wakeUpTime} sleepTime={sleepTime} />
     </div>
   );
 }

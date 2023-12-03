@@ -47,8 +47,12 @@ const DayProgress = ({ wakeUpTime = 6, sleepTime = 22 }) => {
         <svg className="countdown-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
             <defs>
                 <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{ stopColor: '#4ca1af', stopOpacity: 1 }} />
-                    <stop offset="100%" style={{ stopColor: '#c4e0e5', stopOpacity: 1 }} />
+                    <stop offset="0%" style={{ stopColor: '#2c3e50', stopOpacity: 1 }} />   {/* Twilight */}
+                    <stop offset="20%" style={{ stopColor: '#4ca1af', stopOpacity: 1 }} />  {/* Morning Blue */}
+                    <stop offset="40%" style={{ stopColor: '#ffe47a', stopOpacity: 1 }} />  {/* Mid Morning */}
+                    <stop offset="60%" style={{ stopColor: '#e0c3fc', stopOpacity: 1 }} />  {/* Daytime */}
+                    <stop offset="80%" style={{ stopColor: '#d66d75', stopOpacity: 1 }} />  {/* Sunset */}
+                    <stop offset="100%" style={{ stopColor: '#2c3e50', stopOpacity: 1 }} /> {/* Late Evening */}
                 </linearGradient>
             </defs>
             <g transform="rotate(-90 50 50)">
@@ -68,7 +72,7 @@ const DayProgress = ({ wakeUpTime = 6, sleepTime = 22 }) => {
         <div className="label">{timeLeft} hours left</div>
         <div className="label-time-passed">{timePassed} hours passed</div>
     </div>
-);
+  );
 };
 
 export default DayProgress;
